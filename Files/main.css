@@ -355,3 +355,8 @@ html{
       width: 100% !important;
     }
   }
+
+
+#news {
+  height: 400px;
+}
