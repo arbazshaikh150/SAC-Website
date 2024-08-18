@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Files/style.css">
     <link rel="stylesheet" href="Files/main.css">
+    <!-- Link to Font Awesome 5 CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- BEGIN: CSS Assets-->
     <!-- END: CSS Assets-->
     <title>Student Alumni Website</title>
@@ -38,7 +41,7 @@
         </div>
       </div>
     <!-- BEGIN: Mobile Menu -->
-    <div class="mobile-menu lg:hidden">
+    <div class="mobile-menu xl:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto ">
                 <img alt="Logo" class="w-16 mt-0.5 mb-1" src="images/logo_sac.png">
@@ -73,15 +76,32 @@
             </li>
             <li>
                 <a href="Files/achievements.html" class="menu">
-                    <div class="menu__icon"><i class="fa-regular fa-star"></i>  </div>
+                    <!-- <i class="far fa-star fa-lg menu__icon" style="font-size: 20px;"></i> -->
+                    <div class="menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    
                     <div class="menu__title">Alumni Achievements</div>
+                </a>
+            </li>
+
+            <li>
+                <a href="Files/Messages.html" class="menu">
+                    <div class="menu__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="menu__title">Messages</div>
                 </a>
             </li>
             
             <li>
                 <a href="javascript:;" class="menu">
                     <div class="menu__icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg></i> </div>
-                    <div class="menu__title">Initiatives<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down menu__sub-icon "><polyline points="6 9 12 15 18 9"></polyline></svg> </div>
+                    <div class="menu__title">Activities<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down menu__sub-icon "><polyline points="6 9 12 15 18 9"></polyline></svg> </div>
                 </a>
                 <ul class="">
                     <li>
@@ -102,6 +122,18 @@
                             <div class="menu__title"> Yearbook </div>
                         </a>
                     </li>
+                    <li>
+                        <a href="Files/ACGP.html" class="menu">
+                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="menu__title"> ACGP </div>
+                        </a>
+                    </li><li>
+                        <a href="Files/other_act.html" class="menu">
+                            <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="menu__title"> Other Activities </div>
+                        </a>
+                    </li>
+                    
                 </ul>
             </li>
             <li>
@@ -128,7 +160,7 @@
     </div>
     <!-- END: Mobile Menu -->
     <!-- BEGIN: Top Bar -->
-    <div class="-mt-10 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 pt-3 mb-2 top-bar-menu">
+    <div class="-mt-10 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 pt-3 mb-2 top-bar-menu hidden xl:block">
         <div class="top-bar-boxed flex items-center">
             <!-- BEGIN: Logo -->
             <img class="w-20 mt-3 ml-5" src="images/Logo_IIT_Bhilai.png" alt="">
@@ -158,7 +190,7 @@
     
     <!-- END: Top Bar -->
     <!-- BEGIN: Top Menu -->
-    <nav class="top-nav ">
+    <nav class="top-nav hidden xl:block">
         <ul class="border-t border-theme-21" style="padding-top: 6px; padding-top: 4px;">
             <li>
                 <a href="../index.html" class="top-menu top-menu--active">
@@ -462,10 +494,10 @@
             <div class="  intro-y block col-span-12 md:col-span-4 sm:col-span-6 lg:col-span-4 facebook__ mt-5">
                 <div class="rounded-md relative ml-5 mt-1 facebook__">
                     <a class="twitter-timeline" data-height="400" data-width="325" href="https://twitter.com/alumnibhilai?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-                    <!-- <a style="height: 100px;" class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  -->
+                     <a style="height: 100px;" class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  -->
                     <!-- <div id="fbplug"  class="fb-page fb_iframe_widget " data-href="https://www.facebook.com/sac.iitbh/" data-tabs="timeline"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" href=https%3A%2F%2Fwww.facebook.com%2Fiitkgp.alumnicell%2F%3Ffref%3Dts&amp;locale=en_GB&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline"><span style="vertical-align: bottom;"><iframe name="f61c57c02e8828"data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.7/plugins/page.php?adapt_container_width=true&amp;app_id=1066517953466827&amp;container_width=450&amp;height=480&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsac.iitbh%2F%3Ffref%3Dts&amp;locale=en_GB&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline" style="border: none; visibility: visible; width: 100%; height: 100%;" class=""></iframe></span></div> -->
                 </div>
-            </div> -->
+            </div> 
         </div>
     </div>
     <footer class="page-footer mt-10" id="connect" >

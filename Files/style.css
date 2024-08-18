@@ -5351,13 +5351,6 @@ html body {
     padding-bottom: 2.5rem
 }
 
-@media (max-width:767px) {
-    .content {
-        max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem
-    }
-}
 
 .content:before {
     content: "";
@@ -6443,7 +6436,7 @@ html body {
 }
 
 .top-nav>ul li ul {
-    left: 100%;
+    /* left: 100%; */
     margin-left: -4px;
     background: rgba(26, 56, 159, .9294117647058824);
     box-shadow: 0 3px 20px rgba(0, 0, 0, .043137254901960784);
@@ -6452,10 +6445,20 @@ html body {
     padding-left: 0;
     padding-right: 0;
     position: absolute;
-    top: 0;
+    /* top: 0; */
     width: 14rem;
     z-index: 20
 }
+
+@media (max-width:1300px) {
+    .contact_us{
+        margin-left: -10rem;
+    }
+}
+
+
+
+
 
 .top-nav>ul li ul li {
     padding-left: 1.25rem;
@@ -11808,3 +11811,44 @@ video {
         grid-row-start: auto
     }
 }
+
+@media (max-width:768px) {
+    .other_act {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem
+    }
+
+    .other_act .intro-y{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+  
+}
+
+.aluachieve{
+    text-align: center;
+}
+
+@media (min-width:550px) and (max-width: 1250px) {
+    .content .intro-y .aluachieve{
+      font-size: 1.2rem; 
+      text-align: center;
+    }
+}
+
+@media (min-width:1280px) {
+
+    .last{
+        margin-top: -32%;
+    }
+
+    
+}
+
+
+
+
+
