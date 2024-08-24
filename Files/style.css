@@ -5189,6 +5189,7 @@ img.zoom-img {
     position: relative
 }
 
+
 .image-fit>img {
     height: 100%;
     -o-object-fit: cover;
@@ -5196,6 +5197,17 @@ img.zoom-img {
     position: absolute;
     width: 100%
 }
+
+@media screen and (min-width: 1700px) and (max-width: 1700px) and (min-height: 800px) and (max-height: 800px) {
+  .image-fit > img {
+    /* Adjustments for 1700x800 resolution */
+    height: 120%; /* Adjust the height to maintain the aspect ratio you want */
+    width: 95%;
+    object-fit: cover; /* Or use cover depending on the effect */
+    position: relative; /* Adjust position if needed */
+  }
+}
+
 
 .box {
     box-shadow: 0 3px 20px rgba(0, 0, 0, .043137254901960784);
