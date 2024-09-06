@@ -27,6 +27,32 @@
 <!-- END: Head -->
 
 <body class="main">
+    <script>
+        function showTab(tabId) {
+            // Hide all tab panels
+            document.querySelectorAll('.p-4').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+    
+            // Remove active class from all tab buttons
+            // document.querySelectorAll('button').forEach(button => {
+            //     button.classList.remove('bg-blue-500', 'text-white', 'border-blue-500');
+            //     button.classList.add('border-transparent', 'text-gray-700');
+            // });
+    
+            // Show the clicked tab panel
+            document.getElementById(tabId).classList.remove('hidden');
+    
+            // Set active class to the clicked tab button
+            // const activeButton = document.getElementById(`tab-${tabId}`);
+            // activeButton.classList.add('bg-blue-500', 'text-black', 'border-blue-500');
+            // activeButton.classList.remove('border-transparent', 'text-gray-700');
+        }
+    
+        // Initialize first tab as active
+        showTab('about-us');
+
+    </script>
     <!-- BEGIN: Mobile Menu -->
     <div class="mobile-menu xl:hidden">
         <div class="mobile-menu-bar">
@@ -276,24 +302,831 @@
     <!-- END: Top Menu -->
     <!-- BEGIN: Content -->
     <div class="content">
-        <div class="heading mt-8">
-            <!-- Should add some shadow effect on hover -->
-            <center><h class="heading text-xl font-medium truncate mt-1 head__  dark:text-blue-200"><b >About Us
-            </b></h></center>
+        
+        <!-- Tabs -->
+        <div class="mt-5 flex">
+            <button id="tab-about-us" class="w-1/2 py-3 px-6 font-medium bg-blue-500 text-black border-b-2 border-blue-500" onclick="showTab('about-us')">
+                About Us
+            </button>
+            <button id="tab-about-sac" class="w-1/2 py-3 px-6 font-medium border-b-2 border-transparent text-gray-700 hover:bg-blue-100 transition-colors duration-300" onclick="showTab('about-sac')">
+                About SAC
+            </button>
         </div>
-        <center><div class=" box rounded-md mt-6 intro-y grid grid-cols-12 gap-6">
-            <img src="../images/logo_sac.png" class="mt-4 col-span-12 lg:col-span-4 " alt="">
-            <div class= "col-span-12 lg:col-span-8 para">
-                <p class="p-5 text-lg relative" >
-                    Indian Institute of Technology Bhilai was established in 2016 and since has shown exemplary growth as a premier Indian institute by nurturing technical competence and holistic development of its students.
-                    Student Alumni Cell, IIT Bhilai is a student body incepted in the year 2020, soon after the first batch graduated aspiring to connect “dreamers with achievers”. SAC aims to establish a positive synergy between the venerable alumni and their alma mater. SAC endeavours to bridge the gap and provide the present students required guidance to emerge as trailblazers.
-                    The assets of the country as well as the institute are their students, with just a certain amount of twitching in the time. SAC connects both to conspire and venture towards each other’s growth. Under the aegis of illustrious alumni of IIT Bhilai, SAC as the backbone, ambitions to equip the present students to adjudge the right direction and grow. With collective efforts, SAC will act as a pillar of trust of the IIT Bhilai Alumni Fraternity.
-                    <br><br>
-                    Student Alumni Cell runs under the aegis of Alumni affairs and is completely volunteered by the student body. Student Alumni Cell conducts talks, webinars by meritorious graduates of a variety of programmes of IIT Bhilai for the benefit of current students. As the connection between the generations of students blossoms, the Student Alumni Cell of IIT Bhilai endeavours to create a flourishing Alumni Network by undertaking several initiatives.
-                </p>
+        
+        
+        <!-- Tab Content -->
+        <div class="mt-4 border border-gray-300 rounded-lg shadow-lg">
+            <!-- About Us Tab -->
+            <div id="about-us" class="p-4">
+                <div class="rounded-md mt-6 grid grid-cols-12 gap-6">
+                    <img src="../images/logo_sac.png" class="mt-4 col-span-12 lg:col-span-4" alt="">
+                    <div class="col-span-12 lg:col-span-8">
+                        <p class="text-lg">
+                            Indian Institute of Technology Bhilai was established in 2016 and since has shown exemplary growth as a premier Indian institute by nurturing technical competence and holistic development of its students.
+                            Student Alumni Cell, IIT Bhilai is a student body incepted in the year 2020, soon after the first batch graduated aspiring to connect “dreamers with achievers”. SAC aims to establish a positive synergy between the venerable alumni and their alma mater. SAC endeavours to bridge the gap and provide the present students required guidance to emerge as trailblazers.
+                            The assets of the country as well as the institute are their students, with just a certain amount of twitching in the time. SAC connects both to conspire and venture towards each other’s growth. Under the aegis of illustrious alumni of IIT Bhilai, SAC as the backbone, ambitions to equip the present students to adjudge the right direction and grow. With collective efforts, SAC will act as a pillar of trust of the IIT Bhilai Alumni Fraternity.
+                            <br><br>
+                            Student Alumni Cell runs under the aegis of Alumni affairs and is completely volunteered by the student body. Student Alumni Cell conducts talks, webinars by meritorious graduates of a variety of programmes of IIT Bhilai for the benefit of current students. As the connection between the generations of students blossoms, the Student Alumni Cell of IIT Bhilai endeavours to create a flourishing Alumni Network by undertaking several initiatives.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div></center>
+            
+            <!-- About SAC Tab -->
+            <div id="about-sac" class="p-4 hidden">
+                <div class="content">
+
+                    <div class="intro-y items-center h-10">
+                        <h2 class="text-xl font-xxl truncate mt-10">SAC Team Members</h2>
+                    </div>
+                    <div class="box p-2">
+                        <div class="pos__tabs nav-tabs justify-center flex">
+                            
+                                <a data-toggle="tab" data-target="#2023_24" href="javascript:;"
+                                class="flex-1 py-2 rounded-md text-center">SAC Team Members 2024-2025</a>
+                                <a data-toggle="tab" data-target="#2022_23" href="javascript:;"
+                                class="flex-1 py-2 rounded-md text-center">SAC Team Members 2023-2024</a>
+                                <!-- Changing Begins -->
+                                <a data-toggle="tab" data-target="#2020_21" href="javascript:;"
+                                class="flex-1 py-2 rounded-md text-center">SAC Team Members 2022-2023</a>
+
+                        </div>
+                    </div>
+                    <!-- <div class="box p-2">
+                        <div class="pos__tabs nav-tabs justify-center flex">
+                            <a id="tab-2023_24" href="javascript:;" class="tab-button flex-1 py-2 rounded-md text-center active bg-blue-500 text-white border-b-2 border-blue-500">SAC Team Members 2024-2025</a>
+                            <a id="tab-2022_23" href="javascript:;" class="tab-button flex-1 py-2 rounded-md text-center hover:bg-blue-100 transition-colors duration-300">SAC Team Members 2023-2024</a>
+                            <a id="tab-2021_22" href="javascript:;" class="tab-button flex-1 py-2 rounded-md text-center hover:bg-blue-100 transition-colors duration-300">SAC Team Members 2022-2023</a>
+                        </div>
+                    </div> -->
+                    <div class="tab-content">
+                        <div class="tab-content__pane active" id="2023_24">
+                            <div class="grid grid-cols-12 gap-6 mt-5 active">
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2024/Shubham.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Shubham Mahajan</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Coordinator</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    shubhamy@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/__shubham_mahajan__/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    __shubham_mahajan__
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2024/Suraj.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Suraj Uttam Gaikwad</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    surajutt@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/surajgaikwad5476/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    surajgaikwad5476
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2024/Arbaz.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Arbaz Shaikh</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    shaikharbaz@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/arbazshaikh1507/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    arbazshaikh1507
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2024/Shreya.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Shreya Chitluru</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    chitlurus@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/s__ya9/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    s__ya9
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                            </div>
+                            <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                <div class="box lg:col-start-4 lg:col-end-8">
+                                    <div class=" items-start px-5 pt-5">
+                                        <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                            <div class="image-fit cards_img__">
+                                                <img class="rounded-full" src="../images/Team_2024/Rajeev.jpg">
+                                            </div>
+                                            <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                <div class="font-semibold text-lg">Rajeev Goel</div>
+                                                <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center lg:text-left p-3 ">
+                                            <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <path
+                                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                    </path>
+                                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                                </svg>
+                                                rajeevg@iitbhilai.ac.in
+                                            </div>
+                                            <a href="https://www.instagram.com/rajeevgoel187/"
+                                                class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                </svg>
+                                                rajeevgoel187
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                        </div>
+                            <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                <div class="box lg:col-start-4 lg:col-end-8">
+                                    <div class=" items-start px-5 pt-5">
+                                        <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                            <div class="image-fit cards_img__">
+                                                <img class="rounded-full" src="../images/Team_2024/Aditya.jpg">
+                                            </div>
+                                            <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                <div class="font-semibold text-lg">Aditya Kumar Yadav</div>
+                                                <div class="text-gray-600 text-medium mt-0.5">Volunteer</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center lg:text-left p-3 ">
+                                            <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <path
+                                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                    </path>
+                                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                                </svg>
+                                                adityay@iitbhilai.ac.in
+                                            </div>
+                                            <a href="https://www.instagram.com/adityayadavx/"
+                                                class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                </svg>
+                                                adityayadavx
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                        </div>
+            
+                        <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                            <div class="box lg:col-start-4 lg:col-end-8">
+                                <div class=" items-start px-5 pt-5">
+                                    <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                        <div class="image-fit cards_img__">
+                                            <img class="rounded-full" src="../images/Team_2024/Adityar.jpg">
+                                        </div>
+                                        <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                            <div class="font-semibold text-lg">Aditya Rehpade</div>
+                                            <div class="text-gray-600 text-medium mt-0.5">Volunteer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center lg:text-left p-3 ">
+                                        <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                <path
+                                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                </path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                            adityapr@iitbhilai.ac.in
+                                        </div>
+                                        <a href="https://www.instagram.com/adityayadavx/"
+                                            class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                            </svg>
+                                            adityaRehpade
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                    </div>
+                    <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                        <div class="box lg:col-start-4 lg:col-end-8">
+                            <div class=" items-start px-5 pt-5">
+                                <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                    <div class="image-fit cards_img__">
+                                        <img class="rounded-full" src="../images/Team_2024/ketan.jpg">
+                                    </div>
+                                    <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                        <div class="font-semibold text-lg">Ketan</div>
+                                        <div class="text-gray-600 text-medium mt-0.5">Volunteer</div>
+                                    </div>
+                                </div>
+                                <div class="text-center lg:text-left p-3 ">
+                                    <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                            </path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        ketanr@iitbhilai.ac.in
+                                    </div>
+                                    <a href="https://www.instagram.com/adityayadavx/"
+                                        class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg>
+                                        Ketan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                </div>
+                        </div>
+                    </div>
+            
+                        <div class="tab-content__pane " id="2022_23">
+                            <div class="grid grid-cols-12 gap-6 mt-5">
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2023/Sudeep Ranjan Sahoo.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Sudeep Ranjan Sahoo</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Coordinator</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    sudeepranjan@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/srs_sudeep/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    srs_sudeep
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2023/NukalaShreya.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Nukala Shreya</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    nukalas@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/shreya_nukala5/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    shreya_nukala5
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2023/AayushKrishnan.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Aayush Krishnan</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    aayushkr@iitbhilai.ac.in
+                                                </div>
+                                                <!-- <a href="https://www.instagram.com/shaleen.2/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    shaleen.2
+                                                </a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2023/ChutiyaNikhil.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Chiruvolu Nikhil</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    chiruvolu@iitbhilai.ac.in
+                                                </div>
+                                                <a href=""
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                   
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2023/AbhishekOjha.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Abhishek Kumar Ojha</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-PG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    abhisheko@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/abhishekojha2507/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    abhishekojha2507
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="tab-content__pane" id="2020_21">
+                            <div class="grid grid-cols-12 gap-6 mt-5 active">
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2022/purnanand.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Purnanand Dubey</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Coordinator</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    purnanandd@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/purnanand_dubey_/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    purnanand_dubey
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2022/arshy.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Arshpreet Singh</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-PG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    arshpreetsingh@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/its.arshy/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    its.arshy
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2022/shaleen.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Shaleen Malik</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    shaleenmalik@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/shaleen.2/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    shaleen.2
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                    <div class="box lg:col-start-4 lg:col-end-8">
+                                        <div class=" items-start px-5 pt-5">
+                                            <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                                <div class="image-fit cards_img__">
+                                                    <img class="rounded-full" src="../images/Team_2022/sakshi.jpg">
+                                                </div>
+                                                <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                    <div class="font-semibold text-lg">Sakshi Saraswat</div>
+                                                    <div class="text-gray-600 text-medium mt-0.5">Executive-UG</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center lg:text-left p-3 ">
+                                                <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <path
+                                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                        </path>
+                                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                                    </svg>
+                                                    sakshisaraswat@iitbhilai.ac.in
+                                                </div>
+                                                <a href="https://www.instagram.com/sakshi_saraswat32/"
+                                                    class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+                                                    sakshi_saraswat32
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                            </div>
+                            <div class="intro-y col-span-12 md:col-span-6 lg:col-span-4 ">
+                                <div class="box lg:col-start-4 lg:col-end-8">
+                                    <div class=" items-start px-5 pt-5">
+                                        <div class="w-full flex flex-col lg:flex-row items-center lg:ml-4">
+                                            <div class="image-fit cards_img__">
+                                                <img class="rounded-full" src="../images/Team_2022/ravinder.jpg">
+                                            </div>
+                                            <div class="lg:ml-4 text-center lg:text-left mt-3 lg:mt-0 lg:mb-0">
+                                                <div class="font-semibold text-lg">Ravinder Sharma</div>
+                                                <div class="text-gray-600 text-medium mt-0.5">Volunteer</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center lg:text-left p-3 ">
+                                            <div class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-mail w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <path
+                                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                    </path>
+                                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                                </svg>
+                                                ravindersh@iitbhilai.ac.in
+                                            </div>
+                                            <a href="https://www.instagram.com/sakshi_saraswat32/"
+                                                class="flex items-center justify-center lg:justify-start text-gray-600 mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-instagram w-3 h-3 mr-2 w-3 h-3 mr-2">
+                                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                </svg>
+                                                chief_ravinder
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                        </div>
+                        </div>
+                    </div> 
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
+    
     <footer class="page-footer mt-10" id="connect" >
         <div class="container">
           <div style="padding-top: 20px; padding-bottom: 15px;">
