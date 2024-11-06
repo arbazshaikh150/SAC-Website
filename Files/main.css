@@ -86,6 +86,26 @@ hr{
 .multi_car__ img{
     border-radius: 0.7rem;
 }
+
+/* Adding slide effet */
+.multiple-items {
+  animation: scroll 60s linear infinite;
+  animation-play-state: paused; 
+}
+
+.multiple-items:hover {
+  animation-play-state: running; 
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
 .carousel__ img{
     border-radius: 0.7rem;
 }
