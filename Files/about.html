@@ -28,30 +28,28 @@
 
 <body class="main">
     <script>
-        function showTab(tabId) {
+        function showTab(tabId, clickedButton) {
             // Hide all tab panels
             document.querySelectorAll('.p-4').forEach(panel => {
                 panel.classList.add('hidden');
             });
-    
-            // Remove active class from all tab buttons
-            // document.querySelectorAll('button').forEach(button => {
-            //     button.classList.remove('bg-blue-500', 'text-white', 'border-blue-500');
-            //     button.classList.add('border-transparent', 'text-gray-700');
-            // });
-    
+            
             // Show the clicked tab panel
             document.getElementById(tabId).classList.remove('hidden');
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tabs button').forEach(button => {
+                button.classList.remove('bg-blue-500', 'text-black', 'border-blue-500', 'active');
+                button.classList.add('text-gray-700', 'border-transparent');
+            });
     
-            // Set active class to the clicked tab button
-            // const activeButton = document.getElementById(`tab-${tabId}`);
-            // activeButton.classList.add('bg-blue-500', 'text-black', 'border-blue-500');
-            // activeButton.classList.remove('border-transparent', 'text-gray-700');
+            // Add active classes to the clicked tab
+            clickedButton.classList.add('bg-blue-500', 'text-black', 'border-blue-500', 'active');
+            clickedButton.classList.remove('text-gray-700', 'border-transparent');
         }
     
         // Initialize first tab as active
-        showTab('about-us');
-
+        showTab('about-us', document.getElementById('tab-about-us'));
     </script>
         <!-- BEGIN: Mobile Menu -->
         <div class="mobile-menu xl:hidden">
@@ -342,11 +340,11 @@
     <div class="content">
         
         <!-- Tabs -->
-        <div class="mt-5 flex">
-            <button id="tab-about-us" class="w-1/2 py-3 px-6 font-medium bg-blue-500 text-black border-b-2 border-blue-500" onclick="showTab('about-us')">
+        <div class="mt-5 flex pos__tabs nav-tabs ">
+            <button id="tab-about-us" class="w-1/2 py-3 px-6 font-medium bg-blue-500 text-black border-b-2 border-blue-500 rounded-lg shadow-lg active" onclick="showTab('about-us', this)">
                 About Us
             </button>
-            <button id="tab-about-sac" class="w-1/2 py-3 px-6 font-medium border-b-2 border-transparent text-gray-700 hover:bg-blue-100 transition-colors duration-300" onclick="showTab('about-sac')">
+            <button id="tab-about-sac" class="w-1/2 py-3 px-6 font-medium border-b-2 border-transparent text-gray-700 hover:bg-blue-100 transition-colors duration-300 rounded-lg shadow-lg" onclick="showTab('about-sac', this)">
                 About SAC
             </button>
         </div>
@@ -355,7 +353,7 @@
         <!-- Tab Content -->
         <div class="mt-4 border border-gray-300 rounded-lg shadow-lg">
             <!-- About Us Tab -->
-            <div id="about-us" class="p-4">
+            <div id="about-us" class="p-4 active">
                 <div class="rounded-md mt-6 grid grid-cols-12 gap-6">
                     <img src="../images/logo_sac.png" class="mt-4 col-span-12 lg:col-span-4" alt="">
                     <div class="col-span-12 lg:col-span-8">
@@ -381,7 +379,7 @@
                         <div class="pos__tabs nav-tabs justify-center flex">
                             
                                 <a data-toggle="tab" data-target="#2024_25" href="javascript:;"
-                                class="flex-1 py-2 rounded-md text-center">SAC Team Members 2024-2025</a>
+                                class="flex-1 py-2 rounded-md text-center active">SAC Team Members 2024-2025</a>
                                 <a data-toggle="tab" data-target="#2023_24" href="javascript:;"
                                 class="flex-1 py-2 rounded-md text-center">SAC Team Members 2023-2024</a>
                                 <!-- Changing Begins -->

@@ -326,6 +326,31 @@
     <!-- BEGIN: Content -->
     <div class="content" style="height: auto !important; min-height: fit-content !important; overflow: visible !important;" >
 
+        <script>
+            function showTab(tabId, clickedButton) {
+                // Hide all tab panes
+                document.querySelectorAll('.tab-pane').forEach(panel => {
+                    panel.classList.add('hidden');
+                });
+                
+                // Show the selected tab pane
+                document.getElementById(tabId).classList.remove('hidden');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Remove active styles from all tabs
+                document.querySelectorAll('.nav-tabs button').forEach(button => {
+                    button.classList.remove('bg-blue-500', 'text-black', 'border-blue-500', 'active');
+                    button.classList.add('text-gray-700', 'border-transparent');
+                });
+        
+                // Add active styles to the clicked tab
+                clickedButton.classList.add('bg-blue-500', 'text-black', 'border-blue-500', 'active');
+                clickedButton.classList.remove('text-gray-700', 'border-transparent');
+            }
+        
+            // Initialize first tab as active
+            showTab('tab-director', document.getElementById('tab-director-btn'));
+        </script>
 
         <div class="intro-y items-center h-10">
             <h2 class="text-xl font-xxl truncate mt-10"></h2>
@@ -376,9 +401,18 @@
                             </svg>
                         </button> -->
                     </div>
+
+                    <div class="mt-5 flex pos__tabs nav-tabs">
+                        <button id="tab-director-btn" class="w-1/2 py-3 px-6 font-medium bg-blue-500 text-black border-b-2 border-blue-500 rounded-lg shadow-lg active" onclick="showTab('tab-director', this)">
+                            Director
+                        </button>
+                        <button id="tab-dean-btn" class="w-1/2 py-3 px-6 font-medium border-b-2 border-transparent text-gray-700 hover:bg-blue-100 transition-colors duration-300 rounded-lg shadow-lg" onclick="showTab('tab-dean', this)">
+                            FIC Alumni Affairs
+                        </button>
+                    </div>
             
                     <!-- Tab Navigation -->
-                    <div class="tabs mb-6">
+                    <!-- <div class="tabs mb-6">
                         <ul class="flex space-x-4 border-b">
                             <li class="tab-item cursor-pointer py-2 px-4 text-gray-600 hover:text-indigo-600 active-tab" data-target="tab-director">
                                 Director
@@ -387,9 +421,10 @@
                                 FIC Alumni Affairs
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
             
                     <!-- Tab Content -->
+                    
                     <div class="tab-content">
                         <!-- Director Section -->
                         <div id="tab-director" class="tab-pane active">
@@ -397,8 +432,7 @@
                                 <div class="flex w-full flex-col lg:flex-row">
                                     <div class="mr-5">
                                         <center>
-                                            <img class="mb-2 mt-3 cards_img__ image-fit rounded-md"
-                                                src="../images/Director.png" alt="Director's Image">
+                                            <img class="mb-2 mt-3 cards_img__ image-fit rounded-md" src="../images/Director.png" alt="Director's Image">
                                             <div class="text-base font-medium truncate">Prof. Rajeev Prakah</div>
                                             <div class="text-gray-500 mt-1">Director, IIT Bhilai</div>
                                         </center>
@@ -418,15 +452,14 @@
                                 </div>
                             </div>
                         </div>
-            
+                    
                         <!-- Dean of Alumni Affairs Section -->
-                        <div id="tab-dean" class="tab-pane active">
+                        <div id="tab-dean" class="tab-pane">
                             <div class="p-5 mb-2">
                                 <div class="flex w-full flex-col lg:flex-row">
                                     <div class="mr-5">
                                         <center>
-                                            <img class="mb-2 mt-3 cards_img__ image-fit rounded-md"
-                                                src="../images/Dhiman-Saha.jpg" alt="Dean of Alumni Affairs">
+                                            <img class="mb-2 mt-3 cards_img__ image-fit rounded-md" src="../images/Dhiman-Saha.jpg" alt="Dean of Alumni Affairs">
                                             <div class="text-base font-medium truncate">Dr. Dhiman Saha</div>
                                             <div class="text-gray-500 mt-1">FIC Alumni Affairs, IIT Bhilai</div>
                                         </center>
@@ -448,10 +481,11 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
         </div>
             
-                <!-- JavaScript for Tabs -->
+                <!-- JavaScript for Tabs
                 <script>
                     // Get all tab items and tab content
                     const tabItems = document.querySelectorAll('.tab-item');
@@ -476,7 +510,7 @@
                     // Trigger click on the first tab to set it as active on page load
                     tabItems[0].click();
                 </script>
-            
+             -->
             
     </div>
             <footer class="page-footer mt-10" id="connect">
