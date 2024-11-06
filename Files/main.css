@@ -377,6 +377,14 @@ html{
   }
 
 
+
+
 #news {
   height: 400px;
+}
+
+@media only screen and (max-width: 769px){
+  .Highlights{
+    flex-direction: column !important;
+  }
 }
